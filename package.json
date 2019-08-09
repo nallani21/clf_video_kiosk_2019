@@ -1,0 +1,14 @@
+{
+  "name": "clf_video_kisosk_2019",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.0.1"
+  }
+}
