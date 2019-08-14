@@ -1,0 +1,6 @@
+- Download this repo
+- > npm install
+- > ./node_modules/.bin/electron-rebuild
+- > npm start
+
+Anytime you do an 'npm install' you need to run ./node_modules/.bin/electron-rebuild'. 
