@@ -1,7 +1,12 @@
+const { NFC } = require('nfc-pcsc');
+const nfc = new NFC(); // optionally you can pass logger
+const StringDecoder = require('string_decoder').StringDecoder;  
+const decoder = new StringDecoder('utf8');
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 console.log('ready to write')
+document.querySelector(".nfc-data").innerText = "waiting to be read"
 
 nfc.on('reader', reader => {
 
@@ -23,7 +28,7 @@ nfc.on('reader', reader => {
             payload = data.toString(); // utf8 is default encoding
 
             // console.log(`data converted`, payload);
-
+            document.querySelector(".nfc-data").innerText = parseInt(payload, 10)
             console.log(`data current`, parseInt(payload, 10));
 
         } catch (err) {
