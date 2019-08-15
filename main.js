@@ -10,13 +10,15 @@ let mainWindow
 
 function createWindow () {
 
+  // Update autoplay policy
+  
+  app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required")
+
   // Create the browser window.
 
   mainWindow = new BrowserWindow({
 
-    width: 800,
-
-    height: 600,
+    kiosk: true,
 
     webPreferences: {
 
@@ -36,7 +38,7 @@ function createWindow () {
 
   // Open the DevTools.
 
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
 
